@@ -16,6 +16,7 @@ import javafx.stage.Stage;
 import org.carloscortez.controller.FormClienteController;
 import org.carloscortez.controller.MenuClienteController;
 import org.carloscortez.controller.MenuPrincipalController;
+import org.carloscortez.controller.MenuTicketSoporteController;
 
 /**
  *
@@ -78,6 +79,16 @@ public class Main extends Application {
             System.out.println(e.getMessage());
         }
     }
+    
+    public void menuTicketSoporteView(){
+        try{
+            MenuTicketSoporteController menuTicketSoporteView = (MenuTicketSoporteController)switchScene("MenuTicketSoporteView.fxml", 1200,750);
+            menuTicketSoporteView.setStage(this);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+    
 
     /**
      * @param args the command line arguments

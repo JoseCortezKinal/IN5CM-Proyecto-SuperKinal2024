@@ -67,15 +67,15 @@
             <Font name="Verdana" size="18.0" />
          </font>
       </Button>
-      <TextField fx:id="tfClienteId" layoutX="609.0" layoutY="102.0" prefHeight="30.0" prefWidth="211.0" promptText="Ingrese el id del cliente a buscar" />
-      <Button fx:id="btnBuscar" layoutX="824.0" layoutY="103.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="26.0" prefWidth="38.0">
+      <Button fx:id="btnBuscar" layoutX="824.0" layoutY="102.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="26.0" prefWidth="38.0">
          <graphic>
-            <ImageView fitHeight="34.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="22.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../image/lupa.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
+      <TextField fx:id="tfClienteId" layoutX="583.0" layoutY="101.0" prefHeight="30.0" prefWidth="230.0" promptText="Ingrese el id del cliente a buscar" />
    </children>
 </AnchorPane>

@@ -14,11 +14,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import org.carloscortez.dao.Conexion;
 import org.carloscortez.dto.ClienteDTO;
 import org.carloscortez.model.Cliente;
 import org.carloscortez.system.Main;
+import org.carloscortez.utils.SuperKinalAlert;
 
 /**
  * FXML Controller class
@@ -44,15 +46,53 @@ public class FormClienteController implements Initializable {
             ClienteDTO.getClienteDTO().setCliente(null);
         }else if(event.getSource() == btnGuardar){
             if(op == 1){
-                agregarCliente();
-                stage.menuClienteView();
+                if(!tfNombre.getText().equals("") && !tfApellido.getText().equals("") && !tfDireccion.getText().equals("")){
+                    agregarCliente();
+                    SuperKinalAlert.getInstance().mostrarAlertaInformacion(400);
+                    stage.menuClienteView();
+                }else{
+                    SuperKinalAlert.getInstance().mostrarAlertaInformacion(600);
+                    tfNombre.requestFocus();// enfocar un TF de forma dinámica
+                }
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
             }else if(op == 2){
-                editarCliente();
-                ClienteDTO.getClienteDTO().setCliente(null);
-                stage.menuClienteView();
+                if(!tfNombre.getText().equals("") && !tfApellido.getText().equals("") && !tfDireccion.getText().equals("")){
+                    if(SuperKinalAlert.getInstance().mostrarAlertaConfirmacion(505).get() == ButtonType.OK){
+                        editarCliente();
+                        ClienteDTO.getClienteDTO().setCliente(null);
+                        SuperKinalAlert.getInstance().mostrarAlertaInformacion(500);
+                        stage.menuClienteView();
+                    }else{
+                        stage.menuClienteView();
+                    }
+                }else{
+                    SuperKinalAlert.getInstance().mostrarAlertaInformacion(600);
+                    tfNombre.requestFocus();
+                }  
             }
         }
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

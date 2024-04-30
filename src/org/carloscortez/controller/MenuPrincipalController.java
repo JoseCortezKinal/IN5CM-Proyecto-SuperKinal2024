@@ -22,12 +22,14 @@ import org.carloscortez.system.Main;
 public class MenuPrincipalController implements Initializable {
     private Main stage;
     @FXML
-    MenuItem btnClientes;
+    MenuItem btnClientes, btnTicketSoporte;
     
     @FXML
     public void handleButtonAction(ActionEvent event) throws Exception{
         if(event.getSource() == btnClientes){
             stage.menuClienteView();
+        } else if(event.getSource() == btnTicketSoporte){
+            stage.menuTicketSoporteView();
         }
     }
     
